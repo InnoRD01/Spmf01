@@ -12,7 +12,7 @@ if (toggle && nav) {
 
 document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 
-// Contact form: submit to the Pages Function without leaving the page
+// Contact form: submit to the Worker (/api/contact) without leaving the page
 const form = document.querySelector(".contact-form");
 if (form) {
   const status = form.querySelector(".form-status");
