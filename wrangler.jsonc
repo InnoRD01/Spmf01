@@ -1,0 +1,13 @@
+{
+  // "name" must match the Worker's name in the Cloudflare dashboard
+  "name": "spmf01",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+  // Keep variables and secrets set in the dashboard (RESEND_API_KEY, CONTACT_TO, CONTACT_FROM)
+  "keep_vars": true
+}

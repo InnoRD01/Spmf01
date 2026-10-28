@@ -1,0 +1,5 @@
+# Until the other pages are rebuilt, the site root points at the IIL page
+/            /iil/   302
+# Old Wix URL for the IIL page
+/about-2     /iil/   301
+/about-2/    /iil/   301
