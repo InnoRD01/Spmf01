@@ -1,8 +1,8 @@
-// Cloudflare Pages Function: POST /api/contact
+// POST /api/contact handler, called from src/worker.js
 //
 // Migadu hosts the mailbox but has no HTTP sending API, and Workers can't
 // speak SMTP easily, so mail is sent through Resend (https://resend.com) to
-// the Migadu inbox. Configure in Cloudflare Pages → Settings → Variables:
+// the Migadu inbox. Configure in Cloudflare → the Worker → Settings → Variables and Secrets:
 //   RESEND_API_KEY  (secret)
 //   CONTACT_TO      e.g. hello@sikkimprojectmanagementfoundation.org
 //   CONTACT_FROM    e.g. "IIL Website <website@sikkimprojectmanagementfoundation.org>"
@@ -12,7 +12,7 @@ const MAX = { first_name: 100, last_name: 100, email: 200, phone: 40, interest: 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json" } });
 
-export async function onRequestPost({ request, env }) {
+export async function handleContact(request, env) {
   let form;
   try {
     form = await request.formData();
