@@ -1,6 +1,6 @@
 {
   // "name" must match the Worker's name in the Cloudflare dashboard
-  "name": "spmf01",
+  "name": "spmfweb",
   "main": "src/worker.js",
   "compatibility_date": "2026-06-01",
   "assets": {
